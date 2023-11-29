@@ -1,0 +1,233 @@
+{% load static %}
+<!doctype html>
+<html lang="ja" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>{% block title %}{% endblock %}</title>
+
+
+    
+
+    
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+      </symbol>
+    </svg>
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+              id="bd-theme"
+              type="button"
+              aria-expanded="false"
+              data-bs-toggle="dropdown"
+              aria-label="Toggle theme (auto)">
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    
+<header data-bs-theme="dark">
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">気になるニュースを見つけよう</h4>
+          <p class="text-body-secondary">誰でも参加できるニュースサイトです。どんなニュースでもOK！。ですがカテゴリ関するニュースでお願いします</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'news:mypage' %}"
+                   class="text-white">マイページ</a></li>
+            <li><a href="{% url 'accounts:logout' %}"
+                   class="text-white">ログアウト</a></li>
+            <li><a href="{% url 'password_reset' %}"
+                   class="text-white">パスワードのリセット</a></li>
+            <li><a href="mailto:admin@example.com"
+                   class="text-white">Email me</a></li>
+            {% else %}
+            <li><a href="{% url 'accounts:signup' %}" class="text-white">サインアップ</a></li>
+            <li><a href="{% url 'accounts:login' %}" class="text-white">ログイン</a></li>
+            <li><a href="mailo:admin@example.com" class="text-white">Email me</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-primary ">
+    <div class="container">
+      <a href="{% url 'news:index' %}" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="_x31_0" x="0px" y="0px" viewBox="0 0 512 512" style="width: 48px; height: 48px; opacity: 1;" xml:space="preserve">
+          <style type="text/css">
+            .st0{fill:#a1d0f6;}
+          </style>
+          <g>
+            <path class="st0" d="M122.652,258.343l-1.121-19.121l-55.121-5.118L33.93,270.902c-3.442,3.922-3.121,9.922,0.801,13.363   c1.84,1.598,4.078,2.32,6.32,2.32c2.559,0,5.2-1.043,7.039-3.203l26.082-29.519L122.652,258.343z" style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M125.531,296.984c-0.641-3.039-0.961-6.082-1.121-9.281l-0.641-10.399l-46.641,19.36l-11.438,47.679   c-1.281,5.122,1.918,10.242,6.961,11.442c0.719,0.16,1.52,0.238,2.238,0.238c4.238,0,8.16-2.879,9.199-7.199l9.199-38.398   l32.242-13.363V296.984z" style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M484.57,286.585c2.238,0,4.48-0.722,6.238-2.32c3.922-3.442,4.32-9.442,0.882-13.363l-32.48-36.798   l-68.879,6.398l-1.121,19.122l62.16-5.762l26.078,29.519C479.371,285.542,481.93,286.585,484.57,286.585z" style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M441.531,348.824c1.039,4.32,4.957,7.199,9.199,7.199c0.719,0,1.442-0.078,2.238-0.238   c5.043-1.199,8.16-6.32,6.961-11.442l-11.519-47.679l-59.922-24.879l-0.957,15.84c-0.082,1.359-0.16,2.718-0.32,4.078   l45.121,18.722L441.531,348.824z" style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M505.652,55.073L434.817,98.16l-17.918-50.957c-1.301-3.707-6.492-3.848-7.996-0.219l-20.961,50.625   c-8.805,21.258-2.653,45.848,14.843,59.762c-0.019,0.032-0.034,0.063-0.054,0.094c-6.16,8.801-14.32,16-23.84,21.121   c-1.199,0.637-2.402,1.278-3.679,1.84c-1.199,0.558-2.481,1.117-3.762,1.598c-10.798-13.918-28.078-22.961-47.68-22.961h-7.519v-4   v-4v-19.199c1.679,0.32,3.441,0.402,5.199,0.402c22.961,0,41.601-18.641,41.601-41.602c0-23.039-18.64-41.68-41.601-41.68   c-23.039,0-41.68,18.641-41.68,41.68c0,14,6.961,26.48,17.602,33.922v26.477v4v4h-47.68v-4v-4v-24.958   c12-7.202,20-20.402,20-35.441c0-23.039-18.641-41.68-41.679-41.68c-22.962,0-41.602,18.641-41.602,41.68   c0,22.961,18.64,41.602,41.602,41.602c0.957,0,1.839,0,2.718-0.161v18.958v4v4h-42.48c-19.598,0-36.879,9.042-47.68,22.961   c-4,5.039-7.121,10.641-9.121,16.718c-2.321,6.481-3.36,13.602-3.039,20.883l1.199,20.32l1.121,19.199l0.879,14.879l0.801,13.199   c0.078,2.242,0.32,4.481,0.718,6.641c4.641,27.762,29.442,48.64,59.122,48.64H319.77c31.602,0,57.602-23.679,59.602-54.078   c0.078-0.402,0.16-0.801,0.16-1.203l1.121-18.719l0.477-8.078l1.203-19.203l1.278-21.598c0.32-7.282-0.719-14.402-3.039-20.883   c1.199-0.558,2.398-1.117,3.602-1.679c1.199-0.559,2.398-1.199,3.598-1.84c12.875-6.875,23.824-16.867,31.82-29.016   c24.258,7.172,50.742-5.058,60.629-28.937L512,60.515C506.379,55.699,511.27,59.89,505.652,55.073z M159.371,282.984l-1.199-19.922   l-0.16-2.719l-1.122-17.602l-0.32-5.758c-0.398-7.199,8-11.519,13.602-6.961l91.039,73.68c6.078,4.882,2.558,14.8-5.282,14.8   h-60.558c-19.282,0-34.961-14.16-35.84-32.398L159.371,282.984z M228.012,66.023c13.598,0,24.64,11.039,24.64,24.641   c0,4.16-1.121,8.16-2.961,11.679c-3.762,6.879-10.722,11.84-18.961,12.719c-0.879,0.082-1.762,0.16-2.718,0.16   c-13.524,0-24.562-11.039-24.562-24.558C203.45,77.062,214.488,66.023,228.012,66.023z M321.45,115.222   c-1.758,0-3.52-0.16-5.199-0.558c-9.442-2-16.801-9.36-18.879-18.801c-0.402-1.68-0.562-3.438-0.562-5.199   c0-13.602,11.042-24.641,24.641-24.641c13.519,0,24.562,11.039,24.562,24.641C346.012,104.183,334.969,115.222,321.45,115.222z    M316.488,221.382v36.883c0,2-1.598,3.598-3.598,3.598s-3.602-1.598-3.602-3.598v-29.122c-2.398,2.16-5.038,4.078-7.839,5.68   v13.359c0,2-1.68,3.602-3.68,3.602c-1.918,0-3.598-1.602-3.598-3.602v-9.68c-4.321,1.762-9.043,2.962-13.922,3.52   c-25.36,2.961-48.641-12.398-56.641-35.52c-2-5.762,1.679-11.918,7.762-12.558l85.438-10c6-0.641,11.042,4.481,10.402,10.481   C326.25,204.425,322.41,213.703,316.488,221.382z" style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M92.426,166.203c8,12.152,18.954,22.144,31.746,29.019c2.078-5.918,5.039-11.519,8.957-16.637   c-9.519-5.121-17.679-12.32-23.84-21.121c-0.023-0.035-0.038-0.07-0.062-0.102c17.489-13.918,23.633-38.504,14.832-59.754   l-20.961-50.625c-1.5-3.629-6.695-3.488-7.996,0.219L77.187,98.16L6.348,55.073C0.73,59.89,5.621,55.699,0,60.515l31.782,76.754   C41.672,161.152,68.164,173.386,92.426,166.203z" style="fill: rgb(75, 75, 75);"/>
+            <polygon class="st0" points="136.082,399.308 136.082,467.66 149.426,467.66 149.426,447.116 158.258,436.554 175.824,467.66    191.379,467.66 167.09,426.476 189.746,399.308 173.519,399.308 149.426,429.066 149.426,399.308  " style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M210.488,467.624h13.922l4.16-12.082h24.238l4.082,12.082h13.918l-24.958-68.321h-10.48L210.488,467.624z    M232.25,444.343l8.64-24.878l8.398,24.878H232.25z" style="fill: rgb(75, 75, 75);"/>
+            <polygon class="st0" points="303.278,399.308 291.371,399.308 291.371,467.66 304.715,467.66 304.715,425.706 331.785,467.66    343.691,467.66 343.691,399.308 330.348,399.308 330.348,441.164  " style="fill: rgb(75, 75, 75);"/>
+            <rect x="380.961" y="399.308" class="st0" width="13.344" height="68.352" style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M228.012,100.503c0.957,0,1.839-0.16,2.718-0.48c4.16-1.121,7.199-4.961,7.199-9.359   c0-5.442-4.48-9.922-9.918-9.922c-5.442,0-9.84,4.481-9.84,9.922C218.172,96.023,222.57,100.503,228.012,100.503z" style="fill: rgb(75, 75, 75);"/>
+            <path class="st0" d="M321.45,80.741c-5.438,0-9.918,4.481-9.918,9.922c0,3.441,1.918,6.558,4.719,8.32   c1.519,0.961,3.281,1.519,5.199,1.519c5.441,0,9.839-4.48,9.839-9.839C331.289,85.222,326.89,80.741,321.45,80.741z" style="fill: rgb(75, 75, 75);"/>
+          </g>
+          </svg>
+        <strong>News</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  {% block contents %}{% endblock %}
+
+</main>
+
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">トップへ</a>
+    </p>
+    <p class="mb-1">news is &copy; Bootstrap, but please post a lot!</p>
+   
+    
+   
+
+  </div>
+  
+ 
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    </body>
+</html>
