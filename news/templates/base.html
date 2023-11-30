@@ -155,7 +155,7 @@
           <p class="text-body-secondary">誰でも参加できるニュースサイトです。どんなニュースでもOK！。ですがカテゴリ関するニュースでお願いします</p>
         </div>
         <div class="col-sm-4 offset-md-1 py-4">
-          <h4>Contact</h4>
+          <h4></h4>
           <ul class="list-unstyled">
             {% if user.is_authenticated %}
             <li><a href="{% url 'news:mypage' %}"
@@ -164,12 +164,12 @@
                    class="text-white">ログアウト</a></li>
             <li><a href="{% url 'password_reset' %}"
                    class="text-white">パスワードのリセット</a></li>
-            <li><a href="mailto:admin@example.com"
-                   class="text-white">Email me</a></li>
+            <li><a href="{% url 'news:contact' %}"
+                   class="text-white">お問い合わせ</a></li>
             {% else %}
             <li><a href="{% url 'accounts:signup' %}" class="text-white">サインアップ</a></li>
             <li><a href="{% url 'accounts:login' %}" class="text-white">ログイン</a></li>
-            <li><a href="mailo:admin@example.com" class="text-white">Email me</a></li>
+            <li><a href="{% url 'news:contact' %}" class="text-white">お問い合わせ</a></li>
             {% endif %}
           </ul>
         </div>
@@ -215,7 +215,7 @@
 <footer class="text-body-secondary py-5">
   <div class="container">
     <p class="float-end mb-1">
-      <a href="#">トップへ</a>
+      <a href="{% url 'news:index' %}">トップへ</a>
     </p>
     <p class="mb-1">news is &copy; Bootstrap, but please post a lot!</p>
    

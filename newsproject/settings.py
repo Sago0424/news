@@ -1,6 +1,11 @@
+from django.contrib.messages import constants
 from pathlib import Path
 import os
 
+
+MESSAGE_TAGS = {
+    constants.SUCCESS: 'alert alert-success',
+}
 
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -31,6 +36,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "news.apps.NewsConfig",
     "accounts.apps.AccountsConfig",
+    
+    
 ]
 
 MIDDLEWARE = [
